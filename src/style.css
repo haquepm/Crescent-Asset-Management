@@ -390,3 +390,7 @@ body,.app,.main{background:#f4f7fd;color:#0c173d}
 :root,body,#root,.app,.login-shell,.config{font-family:"Montserrat",Arial,sans-serif!important}
 *,*::before,*::after{font-family:inherit}
 button,input,select,textarea{font-family:"Montserrat",Arial,sans-serif!important}
+
+/* Keep the complete hero photograph visible vertically; preserve its natural aspect ratio. */
+.ref-hero{min-height:clamp(250px,19vw,340px);background-size:auto 100%;background-position:right center;background-repeat:no-repeat}
+@media(max-width:720px){.ref-hero{min-height:220px;background-size:auto 100%;background-position:right center}}
