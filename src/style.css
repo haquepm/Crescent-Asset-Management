@@ -672,3 +672,5 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
     min-height:38px!important;
   }
 }
+
+.request-detail-panel{margin-top:16px;text-align:left}.request-detail-panel .panel-head{align-items:flex-start}.request-detail-panel .panel-head h3{font-size:18px;margin:8px 0 5px}.request-detail-panel .panel-head p{font-size:12px;color:#8792aa;margin:0}.request-detail-meta{display:flex;gap:28px;flex-wrap:wrap;padding:14px 0 18px;border-bottom:1px solid #e8edf6;margin-bottom:12px}.request-detail-meta span{display:grid;gap:6px}.request-detail-meta b{font-size:11px;color:#6f7c96}.request-detail-meta em{font-size:13px;font-style:normal;color:#17264a}.request-detail-panel th{font-size:10px}.request-detail-panel td{font-size:12px}
