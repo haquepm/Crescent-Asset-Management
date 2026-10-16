@@ -335,3 +335,16 @@ body,.app,.main{background:#f4f7fd;color:#0c173d}
 .side-bottom{background:#fff!important;position:relative;z-index:2}
 .side-bottom>.nav-item{display:flex!important;min-height:42px!important}
 @media(min-width:721px){.sidebar{width:238px!important}.main{margin-left:238px!important}}
+
+/* Official full-width Crescent Contractors identity */
+.brandmark-logo{display:block;width:220px;height:auto;max-height:72px;object-fit:contain;object-position:left center;flex:0 0 auto}
+.side-brand{align-items:flex-start!important;gap:12px!important}
+.side-brand .brandmark-logo{width:205px;max-height:78px}
+.side-brand>div:not(.brandmark-logo){display:flex;flex-direction:column;gap:3px}
+.side-brand>div:not(.brandmark-logo)>b{display:none}
+.side-brand>div:not(.brandmark-logo)>small{display:none}
+.side-brand .brand-subline{display:block!important;font-size:14px!important;font-weight:700!important;letter-spacing:0!important;color:#101a3d!important;margin-top:2px!important}
+.brand .brandmark-logo{width:min(330px,100%);max-height:96px}
+.mobile-brand .brandmark-logo{width:min(280px,100%);max-height:78px}
+.config>.brandmark-logo{width:240px}
+@media(max-width:720px){.side-brand .brandmark-logo{width:190px;max-height:68px}.brand .brandmark-logo{width:min(260px,100%)}}
