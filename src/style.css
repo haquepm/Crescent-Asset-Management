@@ -7,3 +7,22 @@
 .request-lines{margin-top:20px;padding:14px;background:#141220;border:1px solid #383149;border-radius:10px}.line-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.line-head b{font-size:12px}.line-head .outline{padding:7px 10px;font-size:10px}.request-line{display:grid;grid-template-columns:2fr .7fr 1.5fr 24px;gap:9px;align-items:end;padding:10px 0;border-top:1px solid #302b43}.request-line label{font-size:10px;color:#cfc8de}.request-line input,.request-line select{width:100%;display:block;margin-top:6px;padding:9px;background:#1b182a;border:1px solid #3c3650;border-radius:7px;color:#fff;font-size:11px}.remove-line{margin-bottom:8px}@media(max-width:680px){.request-line{grid-template-columns:1fr 1fr}.request-line label:first-child,.request-line label:nth-child(3){grid-column:span 2}.remove-line{justify-self:end}}
 
 .row-workflow{padding:6px 9px;font-size:10px;white-space:nowrap}.row-workflow svg{vertical-align:middle;margin-right:4px}
+
+/* Collapsible, compact workspace navigation */
+.sidebar{padding-top:20px;padding-bottom:16px;overflow:hidden}
+.side-brand{padding-bottom:22px;flex-shrink:0}
+.workspace-label{padding:17px 12px 8px;flex-shrink:0}
+.side-navigation{display:block;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:0 1px 10px;scrollbar-width:thin;scrollbar-color:#4a3d62 transparent}
+.side-navigation::-webkit-scrollbar{width:5px}
+.side-navigation::-webkit-scrollbar-thumb{background:#403650;border-radius:8px}
+.nav-group{margin:2px 0 5px}
+.nav-group-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;border:0;background:transparent;color:#8f88a5;padding:9px 12px 6px;font-size:9px;font-weight:800;letter-spacing:.12em;text-align:left;text-transform:uppercase;border-radius:7px}
+.nav-group-toggle:hover,.nav-group-toggle.has-active{color:#c6b5f4;background:#211c31}
+.group-chevron{transition:transform .18s ease;color:#716986}
+.group-chevron.expanded{transform:rotate(90deg)}
+.nav-group-items{display:grid;gap:2px;padding:2px 0 5px}
+.nav-group-items .nav-item{padding:9px 11px;font-size:11px;min-height:36px}
+.nav-group-items .nav-item svg{flex-shrink:0}
+.side-bottom{flex-shrink:0;padding-top:10px;background:#171426}
+.side-help{padding:12px;margin-bottom:9px}
+@media(max-width:720px){.sidebar{padding-top:20px}.side-navigation{overscroll-behavior:contain}.nav-group-items .nav-item{min-height:39px}}
