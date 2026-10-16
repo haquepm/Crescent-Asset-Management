@@ -289,7 +289,7 @@ body,.app,.main{background:#f4f7fd;color:#0c173d}
 .ref-status-card{min-height:342px}
 .ref-status-card header select{font-size:12px;padding:8px 12px}
 .ref-status-content{display:flex;align-items:center;justify-content:space-around;gap:20px;min-height:260px}
-.ref-status-donut{width:194px;height:194px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#22b99a 0 calc(var(--p1)*1%),#ffb438 calc(var(--p1)*1%) calc(var(--p2)*1%),#ff6266 calc(var(--p2)*1%) calc(var(--p3)*1%),#e8edf5 calc(var(--p3)*1%) 100%);position:relative}
+.ref-status-donut{width:194px;height:194px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#22b99a 0 var(--p1),#ffb438 var(--p1) var(--p2),#ff6266 var(--p2) var(--p3),#e8edf5 var(--p3) 100%);position:relative}
 .ref-status-donut:before{content:"";position:absolute;inset:31px;background:white;border-radius:50%}
 .ref-status-donut>div{z-index:1;text-align:center}.ref-status-donut b{display:block;font-size:29px;color:#0c173d}.ref-status-donut span{font-size:13px;color:#384969}
 .ref-status-legend{display:grid;gap:22px;min-width:140px;flex:1}
