@@ -320,3 +320,18 @@ body,.app,.main{background:#f4f7fd;color:#0c173d}
 @media(max-width:1250px){.ref-main-grid{grid-template-columns:1fr 1fr}.ref-activities{grid-column:span 2}.ref-status-content{justify-content:space-evenly}.ref-quick-action{gap:9px}.ref-quick-action>i{width:54px;height:54px}.ref-quick-action b{font-size:11px}}
 @media(max-width:900px){.sidebar{width:215px}.main{margin-left:215px}.ref-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.ref-main-grid{grid-template-columns:1fr 1fr}.ref-quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ref-hero h2{font-size:27px}}
 @media(max-width:720px){.sidebar{width:270px;background:#fff}.main{margin-left:0}.topbar{height:auto;min-height:66px;padding:10px 14px;gap:10px;flex-wrap:wrap}.global-search{order:3;flex-basis:100%;max-width:none;height:40px}.top-actions{margin-left:auto;gap:7px}.project-switch{height:38px;padding:0 7px;gap:4px}.project-switch select{max-width:105px;min-width:65px;font-size:10px}.user-chip.user-button>div:not(.avatar),.user-chip.user-button>svg{display:none}.content{padding:0 13px 22px}.ref-hero{min-height:190px;padding:22px;background-position:62% center}.ref-hero:before{background:linear-gradient(90deg,#edf0fa 0%,#edf0fad9 62%,#edf0fa35 100%)}.ref-hero h2{font-size:25px}.ref-hero p{font-size:12px}.ref-kpis{grid-template-columns:1fr 1fr;gap:8px}.ref-kpi{min-height:91px;padding:10px;gap:9px}.ref-kpi>i{width:43px;height:43px}.ref-kpi small{font-size:10px}.ref-kpi b{font-size:22px}.ref-kpi-content>span{font-size:9px}.ref-kpi em{font-size:9px;padding:3px 5px}.ref-main-grid{grid-template-columns:1fr}.ref-activities{grid-column:auto}.ref-status-content{min-height:220px;gap:12px}.ref-status-donut{width:145px;height:145px}.ref-status-donut:before{inset:24px}.ref-status-legend{gap:14px;min-width:120px}.ref-status-legend>div{font-size:11px;gap:6px}.ref-status-legend b{font-size:11px}.ref-asset-row>img{width:45px;height:43px}.ref-asset-row time{display:none}.ref-quick-grid{grid-template-columns:1fr 1fr;gap:8px}.ref-quick-action{min-height:85px;padding:9px;gap:8px}.ref-quick-action>i{width:42px;height:46px}.ref-quick-action>i svg{width:25px}.ref-quick-action b{font-size:10px;white-space:normal}.ref-quick-action small{font-size:9px;white-space:normal}.ref-quick-action>svg{display:none}.ref-dashboard-footer{font-size:9px;gap:8px;flex-wrap:wrap}}
+
+/* Navigation visibility fix: show grouped sections and their links */
+.sidebar{overflow:visible!important}
+.side-navigation{display:block!important;flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important}
+.nav-group-toggle{display:flex!important;visibility:visible!important}
+.nav-group-items{display:grid!important}
+.nav-group-toggle{font-size:10px!important;color:#756b99!important;padding:10px 11px 7px!important}
+.nav-group-toggle.has-active{color:#6044dc!important;background:#f3f0ff!important}
+.nav-group-items .nav-item{display:flex!important;visibility:visible!important;min-height:42px!important;font-size:13px!important;color:#253354!important;padding:10px 12px!important}
+.nav-group-items .nav-item svg{color:#586789!important}
+.nav-group-items .nav-item.active{background:linear-gradient(100deg,#704cf0,#8061ed)!important;color:#fff!important}
+.nav-group-items .nav-item.active svg{color:#fff!important}
+.side-bottom{background:#fff!important;position:relative;z-index:2}
+.side-bottom>.nav-item{display:flex!important;min-height:42px!important}
+@media(min-width:721px){.sidebar{width:238px!important}.main{margin-left:238px!important}}
