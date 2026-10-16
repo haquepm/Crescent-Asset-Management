@@ -674,3 +674,35 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
 }
 
 .request-detail-panel{margin-top:16px;text-align:left}.request-detail-panel .panel-head{align-items:flex-start}.request-detail-panel .panel-head h3{font-size:18px;margin:8px 0 5px}.request-detail-panel .panel-head p{font-size:12px;color:#8792aa;margin:0}.request-detail-meta{display:flex;gap:28px;flex-wrap:wrap;padding:14px 0 18px;border-bottom:1px solid #e8edf6;margin-bottom:12px}.request-detail-meta span{display:grid;gap:6px}.request-detail-meta b{font-size:11px;color:#6f7c96}.request-detail-meta em{font-size:13px;font-style:normal;color:#17264a}.request-detail-panel th{font-size:10px}.request-detail-panel td{font-size:12px}
+
+/* Approved request stock availability and fulfilment */
+.fulfilment-list{display:grid;gap:16px;margin-top:14px}
+.fulfilment-item{border:1px solid #e5eaf5;border-radius:14px;padding:18px;background:#fff}
+.fulfilment-item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.fulfilment-item-head>div{display:grid;gap:5px;min-width:0}
+.fulfilment-item-head b{font-size:15px;color:#14264b}
+.fulfilment-item-head small,.stock-location-row small,.shortage-actions small{font-size:12px;color:#8390aa}
+.availability-pill{border-radius:999px;padding:7px 11px;font-size:11px;font-weight:700;white-space:nowrap}
+.availability-pill.available{background:#e2f8ef;color:#07966b}
+.availability-pill.partial{background:#fff3d9;color:#b87900}
+.availability-pill.shortage{background:#ffe9eb;color:#df4654}
+.fulfilment-metrics{display:grid;grid-template-columns:repeat(7,minmax(90px,1fr));gap:8px;background:#f7f8fc;border:1px solid #edf0f7;border-radius:11px;padding:12px}
+.fulfilment-metrics span{display:grid;gap:5px}
+.fulfilment-metrics small{font-size:10px;color:#7c89a3}
+.fulfilment-metrics b{font-size:14px;color:#17264a}
+.fulfilment-metrics .available-number{color:#07966b}
+.fulfilment-metrics .shortage-number{color:#d94350}
+.stock-location-toggle{display:inline-flex;align-items:center;gap:7px;margin-top:13px;padding:7px 0;border:0;background:transparent;color:#6546e8;font:inherit;font-size:12px;font-weight:600;cursor:pointer}
+.stock-location-list{display:grid;gap:0;border:1px solid #e9edf6;border-radius:10px;overflow:hidden;margin-top:6px}
+.stock-location-row{display:grid;grid-template-columns:minmax(150px,1fr) minmax(170px,auto) auto;align-items:center;gap:16px;padding:12px 14px;border-bottom:1px solid #edf0f6}
+.stock-location-row:last-child{border-bottom:0}
+.stock-location-row>div{display:grid;gap:4px}
+.stock-location-row>div:nth-child(2){text-align:right}
+.stock-location-row b{font-size:12px;color:#17264a}
+.small-action{padding:8px 11px!important;font-size:11px!important;white-space:nowrap}
+.shortage-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:14px;padding:13px 14px;background:#fff8ec;border:1px solid #ffebc6;border-radius:10px}
+.shortage-actions>div{display:grid;gap:4px;flex:1;min-width:180px}
+.shortage-actions>div b{font-size:13px;color:#9b6400}
+.shortage-actions button{display:inline-flex;align-items:center;gap:6px}
+.allocation-note{display:flex;align-items:center;gap:7px;margin-top:12px;color:#07966b;font-size:12px}
+@media(max-width:1100px){.fulfilment-metrics{grid-template-columns:repeat(4,minmax(80px,1fr))}.stock-location-row{grid-template-columns:1fr;gap:7px}.stock-location-row>div:nth-child(2){text-align:left}}
