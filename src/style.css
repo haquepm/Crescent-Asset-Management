@@ -408,3 +408,43 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
 .side-portal-title .close-nav{color:#52658a}
 @media(max-width:1050px){.header-brand-logo{width:155px}.topbar>.global-search{width:42%}}
 @media(max-width:720px){.header-brand-logo{width:155px;max-height:42px}.topbar>.global-search{position:static;transform:none;width:100%;max-width:none;order:3;flex-basis:100%}.side-brand.side-portal-title{padding-top:12px!important}.side-portal-title>b{font-size:16px!important}}
+
+/* Compact icon-only sidebar with hover/focus flyout navigation */
+@media(min-width:721px){
+ .sidebar{width:78px!important;padding:18px 10px 14px!important;align-items:center!important;overflow:visible!important}
+ .main{margin-left:78px!important}
+ .side-brand.side-portal-title{width:100%;min-height:66px!important;padding:10px 0 18px!important;justify-content:center!important;border-bottom:1px solid #e9edf5!important}
+ .side-brand.side-portal-title>b{font-size:9px!important;line-height:1.2!important;text-align:center;letter-spacing:-.02em!important;max-width:58px}
+ .side-brand .close-nav{display:none!important}
+ .workspace-label{font-size:7px!important;letter-spacing:.08em!important;padding:15px 0 10px!important;text-align:center}
+ .side-navigation.icon-rail{width:100%;overflow:visible!important;display:flex!important;flex-direction:column;align-items:center;gap:7px;padding:0!important}
+ .icon-nav-group{width:100%;position:relative;margin:0!important;display:flex;justify-content:center}
+ .icon-nav-trigger{width:52px!important;height:48px!important;min-height:48px!important;padding:0!important;display:flex!important;align-items:center;justify-content:center!important;border-radius:12px!important;background:transparent!important;color:#34466c!important;cursor:pointer}
+ .icon-nav-trigger svg{width:21px;height:21px;flex:none}
+ .icon-nav-trigger.has-active{background:linear-gradient(100deg,#704cf0,#8061ed)!important;color:#fff!important}
+ .icon-nav-tooltip{position:absolute;left:64px;top:50%;transform:translateY(-50%);background:#17213f;color:#fff;padding:8px 11px;border-radius:7px;font-size:11px;font-weight:600;white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none;z-index:20;box-shadow:0 5px 20px #1d28502b}
+ .icon-nav-trigger:hover .icon-nav-tooltip,.icon-nav-trigger:focus-visible .icon-nav-tooltip{opacity:1;visibility:visible}
+ .icon-nav-flyout{display:none!important;position:absolute!important;left:62px;top:0;min-width:220px;padding:10px!important;gap:4px!important;background:#fff;border:1px solid #e5e9f2;border-radius:13px;box-shadow:0 12px 36px #1b28502b;z-index:50}
+ .icon-nav-group:hover .icon-nav-flyout,.icon-nav-group:focus-within .icon-nav-flyout{display:grid!important}
+ .icon-nav-flyout .flyout-title{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#7d87a1;padding:7px 10px 8px}
+ .icon-nav-flyout .nav-item{min-height:39px!important;padding:9px 10px!important;font-size:12px!important;color:#243354!important}
+ .icon-nav-flyout .nav-item:hover{background:#f4f2ff!important;color:#5737d7!important}
+ .icon-nav-flyout .nav-item.active{background:#eee9ff!important;color:#5e3cdd!important}
+ .icon-nav-flyout .nav-item.active svg{color:#5e3cdd!important}
+ .side-bottom{width:100%;display:flex;flex-direction:column;align-items:center}
+ .side-help{display:none!important}
+ .side-bottom>.nav-item{width:52px!important;height:46px;min-height:46px!important;justify-content:center!important;padding:0!important;border-radius:12px!important;font-size:0!important}
+ .side-bottom>.nav-item span{display:none!important}
+ .side-bottom>.nav-item svg{width:20px;height:20px}
+}
+@media(max-width:720px){
+ .sidebar{width:270px!important;align-items:stretch!important;overflow-y:auto!important}
+ .side-navigation.icon-rail{display:block!important;overflow:visible!important}
+ .icon-nav-group{display:block;position:relative;margin:4px 0!important}
+ .icon-nav-trigger{width:100%!important;justify-content:flex-start!important;padding:10px 13px!important;height:44px!important}
+ .icon-nav-tooltip{display:none!important}
+ .icon-nav-flyout{display:grid!important;position:static!important;box-shadow:none!important;border:0!important;background:#f8f9ff!important;margin:0 0 7px 8px;padding:4px!important;min-width:0!important}
+ .side-bottom{align-items:stretch}
+ .side-bottom>.nav-item{width:100%!important;font-size:12px!important;justify-content:flex-start!important;padding:11px!important}
+ .side-bottom>.nav-item span{display:block!important}
+}
