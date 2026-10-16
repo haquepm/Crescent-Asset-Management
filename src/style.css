@@ -192,3 +192,32 @@ td{color:#4b5875;border-bottom:1px solid #edf0f6}
 @media(min-width:1450px){.ref-dashboard{gap:15px}.ref-card{padding:14px 16px}.ref-middle{grid-template-columns:1.22fr 1.08fr 1fr}}
 @media(max-width:1150px){.ref-middle{grid-template-columns:1fr 1fr}.ref-middle>.ref-card:last-child{grid-column:span 2}.ref-bottom-grid{grid-template-columns:1fr 1fr}.ref-bottom-grid>.ref-card:last-child{grid-column:span 2}}
 @media(max-width:760px){.ref-hero{align-items:flex-start;flex-direction:column}.ref-hero>div:first-child{min-width:0}.ref-search{width:100%}.ref-hero>strong{display:none}.ref-kpis{grid-template-columns:1fr 1fr}.ref-middle,.ref-register-grid,.ref-bottom-grid{grid-template-columns:1fr}.ref-middle>.ref-card:last-child,.ref-bottom-grid>.ref-card:last-child{grid-column:auto}.ref-donut-area{justify-content:flex-start}.ref-filters{grid-template-columns:1fr 1fr}.ref-filters label{grid-column:span 2}.ref-sites{grid-template-columns:repeat(2,minmax(0,1fr))}.ref-foot{flex-direction:column;gap:6px}}
+
+
+/* Accessibility pass: increase dashboard typography for comfortable reading */
+.ref-dashboard{font-size:14px}
+.ref-hero span{font-size:10px}.ref-hero h2{font-size:24px}.ref-hero p{font-size:13px}.ref-hero>strong{font-size:20px}
+.ref-search input{font-size:12px}
+.ref-kpi small{font-size:12px}.ref-kpi b{font-size:29px}.ref-kpi em{font-size:11px}
+.ref-card>header>b{font-size:15px}.ref-card>header select{font-size:12px}.ref-card>header button{font-size:12px}
+.ref-donut b{font-size:25px}.ref-donut span{font-size:11px}
+.ref-legend{gap:12px}.ref-legend>div{font-size:12px}.ref-legend b{font-size:12px}
+.ref-chart b{font-size:12px}.ref-chart span{font-size:11px}
+.ref-activity{padding:9px 0}.ref-activity span{font-size:12px}.ref-activity small{font-size:10px}
+.ref-empty{font-size:12px}
+.ref-card h3{font-size:15px}.ref-card header p{font-size:11px}
+.ref-add{font-size:12px;padding:9px 12px}
+.ref-filters select,.ref-filters label,.ref-filters input{font-size:12px}
+.ref-scroll th{font-size:10px;padding:10px 9px}.ref-scroll td{font-size:12px;padding:10px 9px}
+.ref-detail h3{font-size:15px}.ref-detail dl{font-size:12px;grid-template-columns:115px 1fr;gap:9px}
+.ref-sites b{font-size:11px}.ref-sites small{font-size:10px}.ref-sites footer{font-size:10px}
+.ref-maint-row{font-size:12px;padding:11px 0}.ref-maint-row small{font-size:10px}.ref-maint-row b{font-size:10px}
+.ref-reports{gap:9px}.ref-reports button{padding:11px 9px;grid-template-columns:30px 1fr}.ref-reports button b{font-size:10px}.ref-reports button small{font-size:9px}
+.ref-foot{font-size:10px}.ref-foot button{font-size:10px}
+@media(max-width:760px){
+ .ref-hero h2{font-size:22px}.ref-hero p{font-size:12px}
+ .ref-kpi small{font-size:11px}.ref-kpi b{font-size:25px}.ref-kpi em{font-size:10px}
+ .ref-legend>div{font-size:11px}.ref-activity span{font-size:11px}
+ .ref-scroll th{font-size:9px}.ref-scroll td{font-size:11px}
+ .ref-detail dl{font-size:11px}
+}
