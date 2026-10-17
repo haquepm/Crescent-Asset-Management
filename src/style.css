@@ -846,3 +846,48 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
  .login-refresh .login-art{height:auto;min-height:390px}
  .login-refresh .login-panel{height:auto;min-height:auto;overflow:visible;padding:28px 20px 36px}
 }
+
+
+/* Floating login treatment over the uploaded golden-hour construction photo */
+.login-refresh{position:relative;display:block;height:100vh;height:100dvh;min-height:620px;overflow:hidden;background:#122044}
+.login-refresh .login-art{position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:clamp(24px,4vh,42px) clamp(32px,5.5vw,88px) clamp(20px,3vh,32px);background-image:linear-gradient(90deg,rgba(7,20,43,.72) 0%,rgba(9,24,48,.48) 43%,rgba(12,25,48,.12) 100%),url('/Golden-Hour%20Urban%20Construction%20Site.png');background-position:center;background-size:cover}
+.login-refresh .login-art:after{background:linear-gradient(90deg,rgba(5,15,36,.16),transparent 72%),linear-gradient(0deg,rgba(5,15,36,.28),transparent 42%)}
+.login-refresh .login-brand,.login-refresh .art-copy,.login-refresh .art-foot{max-width:53%;z-index:2}
+.login-refresh .art-copy{margin-top:auto;margin-bottom:auto;padding-top:clamp(18px,3vh,34px);padding-bottom:clamp(18px,3vh,34px)}
+.login-refresh .art-copy h1{font-size:clamp(40px,4.5vw,66px)}
+.login-feature-grid{grid-template-columns:repeat(4,minmax(94px,125px));gap:16px;margin-top:clamp(22px,3.4vh,38px)}
+.login-feature-grid>div{align-items:center;text-align:center;gap:10px;font-size:13px;max-width:125px}
+.login-feature-grid .feature-icon{width:62px;height:62px;border-radius:17px;background:rgba(255,255,255,.13);box-shadow:0 8px 24px rgba(9,14,40,.19),inset 0 1px rgba(255,255,255,.2)}
+.login-refresh .login-panel{position:absolute;z-index:5;right:clamp(24px,5.2vw,88px);top:50%;transform:translateY(-50%);width:min(43vw,650px);height:auto;min-height:0;padding:0;background:transparent;overflow:visible}
+.login-refresh .login-card{width:100%;max-width:none;padding:clamp(30px,3.5vw,52px);border:1px solid rgba(255,255,255,.78);border-radius:24px;background:rgba(255,255,255,.94);box-shadow:0 26px 80px rgba(8,18,46,.26);backdrop-filter:blur(18px)}
+.login-refresh .login-card .sub{margin-bottom:clamp(20px,3vh,32px)}
+.login-refresh .login-note{margin-top:clamp(16px,2.5vh,25px)}
+.login-refresh .login-copy{margin-top:clamp(14px,2vh,22px)}
+@media(max-width:1000px) and (min-width:721px){
+ .login-refresh .login-panel{right:24px;width:46vw}
+ .login-refresh .login-card{padding:28px}
+ .login-refresh .login-art{padding-left:35px}
+ .login-refresh .art-copy,.login-refresh .login-brand,.login-refresh .art-foot{max-width:48%}
+ .login-refresh .art-copy h1{font-size:42px}
+ .login-feature-grid{grid-template-columns:repeat(2,minmax(96px,120px));gap:12px}
+}
+@media(max-width:720px){
+ .login-refresh{display:flex;height:auto;min-height:100vh;min-height:100dvh;overflow:visible;flex-direction:column}
+ .login-refresh .login-art{position:relative;inset:auto;height:auto;min-height:420px;padding:26px 22px;background-position:center}
+ .login-refresh .login-brand,.login-refresh .art-copy,.login-refresh .art-foot{max-width:100%}
+ .login-refresh .art-copy{margin:28px 0 18px;padding:0}
+ .login-refresh .login-panel{position:relative;right:auto;top:auto;transform:none;width:auto;padding:0 16px 28px;margin:-8px 0 0}
+ .login-refresh .login-card{padding:26px 22px}
+ .login-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:390px}
+ .login-feature-grid>div{flex-direction:row;align-items:center;text-align:left;max-width:none}
+ .login-feature-grid .feature-icon{width:50px;height:50px;flex-basis:50px}
+}
+@media(max-height:700px) and (min-width:721px){
+ .login-refresh .login-card{padding:22px 28px}
+ .login-refresh .login-card .sub{margin-bottom:14px}
+ .login-input-wrap{height:46px}
+ .login-refresh .login-note{margin-top:12px;padding-top:12px}
+ .login-refresh .login-copy{margin-top:9px}
+ .login-feature-grid{margin-top:16px}
+ .login-feature-grid .feature-icon{width:52px;height:52px}
+}
