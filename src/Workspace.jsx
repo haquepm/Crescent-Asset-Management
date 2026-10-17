@@ -61,8 +61,8 @@ export default function Workspace({page,userId,role,onChanged,onNavigate}) {
  if(cfg.table==='approvals'&&payload.approval_stage==='PROJECT_MANAGER'&&(payload.decision==='APPROVED'||payload.decision==='REJECTED')){const{error:statusError}=await supabase.from('asset_requests').update({status:payload.decision,updated_at:new Date().toISOString()}).eq('id',payload.request_id);if(statusError){setError('Approval was recorded, but request status could not be updated: '+statusError.message);setBusy(false);await load();return}}
  setModal(false);setNotice(editing?'Record updated successfully.':'Record created successfully.');await load();onChanged?.();setBusy(false)}
  async function markScheduleServiced(row){
-  const today=new Date().toISOString().slice(0,10);
-  const next=new Date(Date.now()+Number(row.interval_days)*86400000).toISOString().slice(0,10);
+  const localDate=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+  const now=new Date();const today=localDate(now);const nextDate=new Date(now);nextDate.setDate(nextDate.getDate()+Number(row.interval_days));const next=localDate(nextDate);
   if(!window.confirm('Mark '+row.maintenance_name+' as serviced today and set the next due date to '+next+'?'))return;
   setBusy(true);setError('');
   const{error}=await supabase.from('maintenance_schedules').update({last_service_date:today,next_due_date:next,updated_at:new Date().toISOString()}).eq('id',row.id);
