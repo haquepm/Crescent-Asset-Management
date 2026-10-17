@@ -808,3 +808,41 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
 .login-refresh .error{margin-top:15px}
 @media(max-width:900px){.login-refresh{grid-template-columns:1fr}.login-refresh .login-art{min-height:420px;padding:30px 32px}.login-refresh .art-copy{margin:35px 0}.login-refresh .art-copy h1{font-size:44px}.login-feature-grid{margin-top:24px}.login-refresh .art-foot{display:none}.login-refresh .login-panel{min-height:auto;padding:35px 22px 50px}.login-refresh .login-card{max-width:560px}}
 @media(max-width:520px){.login-refresh .login-art{min-height:390px;padding:26px 22px}.login-refresh .brandmark-logo{width:160px}.login-refresh .art-copy h1{font-size:38px}.login-refresh .art-copy>p{font-size:14px}.login-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.login-feature-grid>div{flex-direction:row;align-items:center}.login-feature-grid .feature-icon{width:42px;height:42px;flex:0 0 42px}.login-refresh .login-panel{padding:24px 14px 35px}.login-refresh .login-card{padding:26px 21px;border-radius:18px}.login-refresh .login-card h2{font-size:27px}}
+
+
+/* Login: fit the entire experience inside the first viewport */
+.login-refresh{height:100vh;height:100dvh;min-height:620px;overflow:hidden;grid-template-columns:minmax(0,1.1fr) minmax(480px,.9fr)}
+.login-refresh .login-art{height:100%;min-height:0;padding:clamp(24px,4vh,42px) clamp(32px,5.5vw,88px) clamp(20px,3vh,32px);background-image:linear-gradient(90deg,rgba(8,19,43,.78),rgba(15,25,53,.34) 58%,rgba(31,29,62,.12)),url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=88');background-position:center;background-size:cover}
+.login-refresh .login-brand{min-height:54px}
+.login-refresh .brandmark-logo{width:170px;max-height:66px}
+.login-refresh .art-copy{margin:clamp(12px,2vh,24px) 0;max-width:700px}
+.login-refresh .art-copy h1{font-size:clamp(38px,4.6vw,66px);margin:16px 0 13px}
+.login-refresh .art-copy>p{font-size:clamp(14px,1.15vw,17px);line-height:1.6;max-width:590px}
+.login-feature-grid{margin-top:clamp(18px,3vh,30px);gap:10px}
+.login-feature-grid .feature-icon{width:44px;height:44px;border-radius:13px}
+.login-refresh .art-foot{font-size:9px}
+.login-refresh .login-panel{height:100%;min-height:0;padding:clamp(18px,3vh,34px) clamp(24px,4vw,64px);overflow:hidden}
+.login-refresh .login-card{max-width:520px;padding:clamp(24px,3.2vh,38px) clamp(26px,3.5vw,44px);border-radius:22px}
+.login-refresh .login-card h2{font-size:clamp(25px,2.2vw,33px);margin:12px 0 7px}
+.login-refresh .login-card .sub{font-size:14px;margin-bottom:clamp(18px,3vh,28px)}
+.login-refresh .login-card form{gap:7px}
+.login-refresh .login-card label{margin-top:3px;font-size:12px}
+.login-input-wrap{height:52px}
+.login-refresh .login-options{margin:5px 0 7px}
+.login-refresh .login-submit{height:54px}
+.login-refresh .login-note{margin-top:20px;padding-top:17px;font-size:11px}
+.login-refresh .login-copy{margin-top:17px;font-size:9px}
+@media(max-height:760px) and (min-width:901px){
+ .login-refresh .login-card{padding:20px 30px}
+ .login-refresh .login-card .sub{margin-bottom:14px}
+ .login-input-wrap{height:46px}
+ .login-refresh .login-note{margin-top:13px;padding-top:12px}
+ .login-refresh .login-copy{margin-top:10px}
+ .login-refresh .art-copy h1{font-size:clamp(36px,4vw,54px)}
+ .login-feature-grid{margin-top:16px}
+}
+@media(max-width:900px){
+ .login-refresh{height:auto;min-height:100vh;min-height:100dvh;overflow:visible}
+ .login-refresh .login-art{height:auto;min-height:390px}
+ .login-refresh .login-panel{height:auto;min-height:auto;overflow:visible;padding:28px 20px 36px}
+}
