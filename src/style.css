@@ -891,3 +891,8 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
  .login-feature-grid{margin-top:16px}
  .login-feature-grid .feature-icon{width:52px;height:52px}
 }
+
+
+.topbar-signout{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid #e1e6f1;border-radius:11px;background:#fff;color:#475779;font:700 12px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;transition:all .18s}
+.topbar-signout:hover{border-color:#b9a9ff;background:#f7f5ff;color:#6042e8}
+@media(max-width:600px){.topbar-signout{width:38px;min-width:38px;padding:0}.topbar-signout span{display:none}}
