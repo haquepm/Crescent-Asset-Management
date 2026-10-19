@@ -907,3 +907,48 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
 .hire-return-controls{min-width:520px!important;max-width:760px}
 .hire-return-controls input{min-width:95px;height:34px;padding:0 9px;border:1px solid #dce2ef;border-radius:8px;background:#fff;color:#26334f;font:600 11px 'DM Sans',sans-serif}
 .hire-return-controls input[placeholder]{min-width:130px;flex:1}
+
+
+/* Hire return controls: keep vehicle selection fully visible without horizontal scrolling */
+.hire-return-controls{
+ display:grid!important;
+ grid-template-columns:minmax(0,1fr)!important;
+ gap:8px!important;
+ width:260px!important;
+ min-width:260px!important;
+ max-width:260px!important;
+ padding:10px!important;
+ box-sizing:border-box!important;
+ background:#f8f9ff!important;
+ border:1px solid #e4e8f5!important;
+ border-radius:10px!important;
+ white-space:normal!important;
+}
+.hire-return-controls input,
+.hire-return-controls select{
+ display:block!important;
+ width:100%!important;
+ min-width:0!important;
+ max-width:none!important;
+ height:40px!important;
+ box-sizing:border-box!important;
+ font-size:13px!important;
+}
+.hire-return-controls .row-workflow{
+ display:block!important;
+ width:100%!important;
+ min-height:38px!important;
+ white-space:normal!important;
+ margin:0!important;
+}
+@media(min-width:721px){
+ .table-wrap:has(.hire-return-controls) td:last-child{
+  min-width:285px!important;
+  width:285px!important;
+  white-space:normal!important;
+  vertical-align:top!important;
+ }
+}
+@media(max-width:900px){
+ .hire-return-controls{width:100%!important;min-width:230px!important;max-width:100%!important}
+}
