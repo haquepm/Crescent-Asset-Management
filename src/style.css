@@ -896,3 +896,10 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
 .topbar-signout{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid #e1e6f1;border-radius:11px;background:#fff;color:#475779;font:700 12px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;transition:all .18s}
 .topbar-signout:hover{border-color:#b9a9ff;background:#f7f5ff;color:#6042e8}
 @media(max-width:600px){.topbar-signout{width:38px;min-width:38px;padding:0}.topbar-signout span{display:none}}
+
+
+/* Allocation dispatch: driver and vehicle selectors on each allocation row */
+.allocation-dispatch-controls{display:flex;flex-wrap:wrap;align-items:center;gap:7px;min-width:310px}
+.allocation-dispatch-controls select{min-width:135px;max-width:190px;height:34px;padding:0 9px;border:1px solid #dce2ef;border-radius:8px;background:#fff;color:#26334f;font:600 11px 'DM Sans',sans-serif}
+.allocation-dispatch-controls .row-workflow{white-space:nowrap}
+@media(max-width:900px){.allocation-dispatch-controls{min-width:240px;flex-direction:column;align-items:stretch}.allocation-dispatch-controls select{max-width:none;width:100%}}
