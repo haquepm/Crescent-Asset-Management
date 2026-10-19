@@ -148,17 +148,30 @@ export default function Workspace({page,userId,role,onChanged,onNavigate}) {
  async function printChallan(row){
   const w=window.open('','_blank');
   if(!w){setError('Allow pop-ups to open the delivery challan.');return}
-  const [itemsResult,driverResult,sourceResult,destinationResult,hireSupplierResult]=await Promise.all([
+  const [itemsResult,driverResult,sourceResult,destinationResult]=await Promise.all([
    supabase.from('challan_items').select('quantity,specification,hsn_code,unit_rate,gst_rate,items(item_name,unit,hsn_code,default_rate,gst_rate)').eq('challan_id',row.id).order('id'),
    row.driver_id?supabase.from('user_profiles').select('full_name,phone').eq('id',row.driver_id).maybeSingle():Promise.resolve({data:null,error:null}),
    row.source_location_id?supabase.from('locations').select('location_name,location_code,address,contact_person,contact_phone').eq('id',row.source_location_id).maybeSingle():Promise.resolve({data:null,error:null}),
-   row.destination_location_id?supabase.from('locations').select('location_name,location_code,address,contact_person,contact_phone').eq('id',row.destination_location_id).maybeSingle():Promise.resolve({data:null,error:null}),
-   row.challan_type==='HIRE_RECEIPT'?supabase.from('challan_items').select('reference_id,hire_records(suppliers(supplier_name,address,contact_person,phone))').eq('challan_id',row.id).eq('reference_type','HIRE').maybeSingle():Promise.resolve({data:null,error:null})
+   row.destination_location_id?supabase.from('locations').select('location_name,location_code,address,contact_person,contact_phone').eq('id',row.destination_location_id).maybeSingle():Promise.resolve({data:null,error:null})
   ]);
-  const failure=[itemsResult,driverResult,sourceResult,destinationResult,hireSupplierResult].find(x=>x.error);
+  const failure=[itemsResult,driverResult,sourceResult,destinationResult].find(x=>x.error);
   if(failure){w.close();setError(failure.error.message);return}
+  let hireSupplier=null;
+  if(row.challan_type==='HIRE_RECEIPT'){
+   const {data:hireLine,error:hireLineError}=await supabase.from('challan_items').select('reference_id').eq('challan_id',row.id).eq('reference_type','HIRE').maybeSingle();
+   if(hireLineError){w.close();setError(hireLineError.message);return}
+   if(hireLine?.reference_id){
+    const {data:hire,error:hireError}=await supabase.from('hire_records').select('supplier_id').eq('id',hireLine.reference_id).maybeSingle();
+    if(hireError){w.close();setError(hireError.message);return}
+    if(hire?.supplier_id){
+     const {data:supplier,error:supplierError}=await supabase.from('suppliers').select('supplier_name,address,contact_person,phone').eq('id',hire.supplier_id).maybeSingle();
+     if(supplierError){w.close();setError(supplierError.message);return}
+     hireSupplier=supplier;
+    }
+   }
+  }
   const esc=v=>String(v??'').replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
-  const source=sourceResult.data,destination=destinationResult.data,driver=driverResult.data,hireSupplier=hireSupplierResult.data?.hire_records?.suppliers||null;
+  const source=sourceResult.data,destination=destinationResult.data,driver=driverResult.data;
   const fmtDate=row.dispatch_date?new Date(row.dispatch_date).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'}):new Date().toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'});
   const goods=(itemsResult.data||[]).map((x,i)=>{
    const qty=Number(x.quantity||0);
