@@ -767,7 +767,6 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
 .app .content{width:100%;max-width:1600px;margin-left:auto;margin-right:auto}
 
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
 .login-refresh{min-height:100vh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(480px,.9fr);background:#f5f7ff;font-family:'DM Sans',sans-serif;color:#17264b}
 .login-refresh *{box-sizing:border-box}
 .login-refresh .login-art{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:100vh;padding:54px clamp(38px,6vw,100px) 42px;overflow:hidden;background:linear-gradient(112deg,rgba(12,24,61,.98) 0%,rgba(24,32,79,.93) 46%,rgba(45,36,103,.69) 100%),url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat}
