@@ -1,4 +1,4 @@
-import React,{useMemo,useState}from'react';
+import React,{useMemo,useState}from'react';import OperationsMap from './OperationsMap';
 import{Building2,Warehouse,Truck,Boxes,ArrowLeftRight,MapPin,Activity,Package,HardHat,ChevronRight}from'lucide-react';
 
 const number=v=>Number(v||0).toLocaleString('en-IN',{maximumFractionDigits:1});
@@ -31,20 +31,7 @@ export default function IsometricScene({projects=[],locations=[],vehicles=[],mov
    </div>
   </div>
   <div className="iso-game-layout">
-   <div className="iso-game-map-wrap">
-    <div className="iso-map-toolbar"><span><Activity size={14}/> OPERATIONS MAP</span><small>{activeLocations.length} active locations · database snapshot</small></div>
-    <div className="iso-game-map">
-     <div className="iso-map-road road-one"/><div className="iso-map-road road-two"/><div className="iso-map-river"/>
-     {siteStats.map((loc,i)=>{const project=projects.find(p=>p.id===loc.project_id);const yard=loc.location_type==='YARD';const selectedNode=active===loc.id;return <button type="button" key={loc.id} className={'iso-map-node '+(yard?'yard':'site')+(selectedNode?' selected':'')} style={{'--node-index':i}} onClick={()=>setActive(selectedNode?null:loc.id)} aria-pressed={selectedNode}>
-       <span className="iso-node-platform"><i className="iso-node-building"/><i className="iso-node-stack stack-a"/><i className="iso-node-stack stack-b"/><i className="iso-node-crane"/><i className="iso-node-vehicle"><Truck size={15}/></i></span>
-       <span className="iso-node-copy"><b>{short(loc.location_name,24)}</b><small>{yard?'CENTRAL YARD':'PROJECT SITE'}</small><em><Package size={11}/>{number(loc.materialQty)} units</em></span>
-       <span className="iso-node-pin"><MapPin size={13}/></span>
-       {loc.vehicles>0&&<span className="iso-node-alert">{loc.vehicles} MOVING</span>}
-      </button>})}
-     {!siteStats.length&&<div className="iso-map-empty">No active sites or yards are registered yet. Add locations to populate the operations world.</div>}
-     <div className="iso-map-legend"><span><i className="legend-site"/> Project site</span><span><i className="legend-yard"/> Yard</span><span><i className="legend-route"/> Recorded movement</span></div>
-    </div>
-   </div>
+   <div className="iso-game-map-wrap"><OperationsMap locations={locations} projects={projects} challans={challans} onSelectLocation={loc=>setActive(loc.id)}/></div>
    <aside className="iso-world-side">
     <div className="iso-side-head"><div><small>{selected?'LOCATION INTELLIGENCE':'NETWORK INTELLIGENCE'}</small><b>{selected?selected.location_name:'Operations overview'}</b></div><MapPin size={18}/></div>
     {selected?<><div className="iso-selected-type">{selected.location_type==='YARD'?'Storage & distribution yard':'Active construction site'}{selected.location_code?' · '+selected.location_code:''}</div><div className="iso-side-metrics"><div><b>{number(selected.materialQty)}</b><small>Material units</small></div><div><b>{selected.skuCount}</b><small>Material types</small></div><div><b>{selected.activity}</b><small>Movements logged</small></div><div><b>{selected.vehicles}</b><small>Open dispatches</small></div></div><div className="iso-material-list"><small>MATERIALS AT THIS LOCATION</small>{balances.filter(x=>x.location_id===selected.id&&Number(x.quantity_on_hand||0)>0).slice(0,5).map(x=><div key={x.id}><span>{short(items.find(i=>i.id===x.item_id)?.item_name||'Material',24)}</span><b>{number(x.quantity_on_hand)} {items.find(i=>i.id===x.item_id)?.unit||'units'}</b></div>)}{!balances.some(x=>x.location_id===selected.id&&Number(x.quantity_on_hand||0)>0)&&<span className="iso-no-data">No material balance recorded at this location.</span>}</div><div className="iso-side-detail"><small>PROJECT</small><b>{projects.find(p=>p.id===selected.project_id)?.project_name||'Shared / central location'}</b><small>ADDRESS</small><span>{selected.address||'Address not recorded'}</span><small>CONTACT</small><span>{selected.contact_person||'Not assigned'}{selected.contact_phone?' · '+selected.contact_phone:''}</span></div><button className="iso-side-action" onClick={()=>onNavigate?.('Locations')}>Open location register <ChevronRight size={15}/></button></>:<><div className="iso-side-metrics"><div><b>{activeLocations.length}</b><small>Active locations</small></div><div><b>{projects.filter(p=>p.status==='ACTIVE').length}</b><small>Active projects</small></div><div><b>{items.length}</b><small>Material catalogue</small></div><div><b>{movements.length}</b><small>Recent movements</small></div></div><div className="iso-side-detail"><small>NETWORK STATUS</small><span>Operational records are synced from the Crescent database. Select any site tile to inspect its materials and activity.</span></div><button className="iso-side-action" onClick={()=>onNavigate?.('Locations')}>Explore all locations <ChevronRight size={15}/></button></>}
