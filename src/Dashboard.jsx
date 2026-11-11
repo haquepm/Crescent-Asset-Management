@@ -1,5 +1,5 @@
 import React,{useEffect,useState}from'react';
-import{Boxes,MapPin,Package,ArrowUpRight,Truck,FileBarChart,ChevronRight,RefreshCw,Fuel,ClipboardList,Bell,Activity,AlertTriangle,Building2,ArrowLeftRight,Warehouse,Clock3,Wrench,CheckCircle2}from'lucide-react';
+import{Boxes,MapPin,Package,ArrowUpRight,Truck,FileBarChart,ChevronRight,RefreshCw,Fuel,ClipboardList,Bell,Activity,AlertTriangle,Building2,ArrowLeftRight,Warehouse,Clock3,Wrench,CheckCircle2,ShieldCheck}from'lucide-react';
 import{supabase}from'./supabase';
 import IsometricScene from './IsometricScene';
 import './CommandDashboard.css';
