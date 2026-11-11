@@ -1196,3 +1196,14 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
 .iso-world-overlay svg{color:#7659d6}
 .iso-world-disclaimer{position:absolute;right:9px;bottom:8px;padding:4px 6px;border-radius:5px;background:#ffffffdf;color:#827991;font-size:7px}
 @media(max-width:680px){.iso-view-switch{justify-content:flex-start;flex-wrap:wrap}.iso-view-switch>span{width:100%}.iso-view-switch button{flex:1}.iso-world-map-head{gap:6px}.iso-world-map-head>small{display:none}.iso-world-map-head>div{margin-left:auto}.iso-world-canvas{min-height:280px}.iso-world-canvas>svg{min-height:280px}.iso-world-overlay{gap:4px;left:6px;bottom:7px}.iso-world-overlay span{font-size:7px;padding:5px 6px}.iso-world-disclaimer{display:none}}
+
+
+/* Location-true isometric world and live request alerts */
+.iso-world-map-head>div b.request-key{width:9px;height:9px;background:#e64f65;box-shadow:0 0 0 3px #e64f6522}
+.iso-request-alert{pointer-events:none;transform-box:fill-box;transform-origin:center}
+.iso-request-badge{fill:#d83e58;stroke:#fff;stroke-width:3;filter:drop-shadow(0 3px 5px #8d244a55)}
+.iso-request-text{fill:#fff;font-size:10px;font-weight:900;letter-spacing:.06em}
+.iso-request-pulse{fill:#ed4964;opacity:.28;animation:isoRequestPulse 1.35s ease-out infinite}
+.iso-request-summary{border-color:#f3c6ce!important;background:#fff5f6!important;color:#bd3851!important}
+@keyframes isoRequestPulse{0%{r:15;opacity:.55}100%{r:31;opacity:0}}
+@media(prefers-reduced-motion:reduce){.iso-request-pulse{animation:none;opacity:.4}}
