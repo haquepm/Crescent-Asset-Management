@@ -1174,3 +1174,25 @@ button,input,select,textarea{font-family:"Poppins",Arial,sans-serif!important}
 @media(max-width:680px){.ops-map-canvas{height:340px}.ops-real-map-head{padding:0 8px}.ops-real-map-head>div{font-size:8px;letter-spacing:.06em}.ops-real-map-head small{display:none}.ops-real-map-head>span{font-size:7px}.ops-map-foot{gap:8px;font-size:8px}}
 
 .ops-map-canvas>img{position:absolute;display:block;object-fit:cover;max-width:none}.ops-map-selected{grid-template-columns:1fr auto}.ops-map-selected>div{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:6px}.ops-map-selected>div button{border:0;border-radius:7px;padding:7px 9px;background:#7656d8;color:#fff;font-size:9px}.ops-map-selected>div button:last-child{background:#ece8f5;color:#51466c}.ops-map-selected em{grid-column:1/-1;font-size:9px;color:#805fca;font-style:normal}
+
+
+/* Strategic isometric operations world */
+.iso-view-switch{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin:0 0 8px;padding:0 2px}
+.iso-view-switch>span{margin-right:auto;color:#958ba9;font-size:8px;font-weight:900;letter-spacing:.13em}
+.iso-view-switch button{border:1px solid #e3dcef;border-radius:8px;padding:7px 11px;background:#fff;color:#746b87;font-size:9px;font-weight:800;cursor:pointer}
+.iso-view-switch button.active{border-color:#7252d0;background:#7252d0;color:#fff;box-shadow:0 4px 10px #7252d033}
+.iso-world-map{overflow:hidden;border:1px solid #e4ddf2;border-radius:16px;background:#fff;box-shadow:0 8px 22px #4030710b}
+.iso-world-map-head{min-height:42px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 13px;border-bottom:1px solid #eee9f6;background:#fbfaff}
+.iso-world-map-head>span{display:flex;align-items:center;gap:8px;color:#5e4a9a;font-size:9px;font-weight:900;letter-spacing:.13em}
+.iso-world-map-head>span i{width:8px;height:8px;border-radius:50%;background:#12b89b;box-shadow:0 0 0 4px #12b89b22}
+.iso-world-map-head>small{color:#928ba5;font-size:8px}
+.iso-world-map-head>div{display:flex;align-items:center;gap:5px;margin-left:auto;color:#817891;font-size:8px}
+.iso-world-map-head>div b{width:8px;height:8px;border-radius:50%;background:#7655d7}.iso-world-map-head>div b.yard{background:#24a78e}.iso-world-map-head>div b.route{width:15px;height:3px;border-radius:0;background:#e5a23e}
+.iso-world-canvas{position:relative;min-height:360px;overflow:hidden;background:radial-gradient(ellipse at 48% 44%,#fff 0,#f8f5ff 54%,#eee8fb 100%)}
+.iso-world-canvas>svg{display:block;width:100%;height:auto;min-height:360px;max-height:520px}
+.iso-world-node{transition:filter .2s}.iso-world-node:hover{filter:drop-shadow(0 8px 8px #55417c35)}
+.iso-world-overlay{position:absolute;left:12px;bottom:12px;display:flex;gap:7px;flex-wrap:wrap;max-width:calc(100% - 24px)}
+.iso-world-overlay span{display:flex;align-items:center;gap:5px;padding:6px 8px;border:1px solid #e4ddf2;border-radius:8px;background:#ffffffed;color:#655a7e;font-size:8px;font-weight:800;box-shadow:0 3px 8px #49377b0d}
+.iso-world-overlay svg{color:#7659d6}
+.iso-world-disclaimer{position:absolute;right:9px;bottom:8px;padding:4px 6px;border-radius:5px;background:#ffffffdf;color:#827991;font-size:7px}
+@media(max-width:680px){.iso-view-switch{justify-content:flex-start;flex-wrap:wrap}.iso-view-switch>span{width:100%}.iso-view-switch button{flex:1}.iso-world-map-head{gap:6px}.iso-world-map-head>small{display:none}.iso-world-map-head>div{margin-left:auto}.iso-world-canvas{min-height:280px}.iso-world-canvas>svg{min-height:280px}.iso-world-overlay{gap:4px;left:6px;bottom:7px}.iso-world-overlay span{font-size:7px;padding:5px 6px}.iso-world-disclaimer{display:none}}
