@@ -17,8 +17,8 @@ export default function Dashboard({title,onNavigate}){
   supabase.from('item_categories').select('*').limit(100),
   supabase.from('vehicles').select('*').order('registration_number').limit(200),
   supabase.from('delivery_challans').select('*').order('dispatch_date',{ascending:false}).limit(100),
-  supabase.from('asset_requests').select('id,request_number,status,request_type,created_at,destination_location_id').order('created_at',{ascending:false}).limit(100),
-  supabase.from('plant_equipment').select('id,equipment_code,equipment_name,ownership_type,status,current_location_id').limit(300),
+  supabase.from('asset_requests').select('id,request_number,status,remarks,created_at,destination_location_id').order('created_at',{ascending:false}).limit(100),
+  supabase.from('plant_equipment').select('id,equipment_code,equipment_name,ownership_type,is_active,current_location_id').limit(300),
   supabase.from('diesel_drums').select('id,drum_code,location_id,capacity_litres').limit(200),
   supabase.from('diesel_issues').select('id,status,quantity_litres,created_at,drum_id,equipment_id').order('created_at',{ascending:false}).limit(100),
   supabase.from('plant_meter_readings').select('id,reading_date,equipment_id').order('reading_date',{ascending:false}).limit(100)
@@ -29,7 +29,7 @@ export default function Dashboard({title,onNavigate}){
  const activeLocations=d.locations.filter(x=>x.is_active!==false),activeFleet=d.vehicles.filter(x=>x.is_active!==false),openRequests=d.requests.filter(x=>!['FULFILLED','CANCELLED','REJECTED','CLOSED','COMPLETED','VOID'].includes(String(x.status||'').toUpperCase()));
  const pendingIssues=d.issues.filter(x=>String(x.status||'').toUpperCase()==='PENDING'),approvedIssues=d.issues.filter(x=>String(x.status||'').toUpperCase()==='APPROVED');
  const activeDispatches=d.challans.filter(x=>!['RECEIVED','CANCELLED','CLOSED','COMPLETED'].includes(String(x.status||'').toUpperCase()));
- const alerts=[...openRequests.slice(0,4).map(x=>({id:x.id,kind:'request',title:x.request_type||'Site request',detail:x.request_number||'Awaiting review',status:x.status||'PENDING',location:d.locations.find(l=>l.id===x.destination_location_id)?.location_name||'Project site'})),...pendingIssues.slice(0,3).map(x=>({id:x.id,kind:'fuel',title:'Fuel issue approval',detail:Number(x.quantity_litres||0).toLocaleString('en-IN')+' litres',status:'PENDING',location:'Plant & Fuel'})),...d.maintenance.slice(0,3).map(x=>({id:x.id,kind:'maintenance',title:x.title||x.description||'Maintenance activity',detail:x.status||'Maintenance record',status:x.status||'REPORTED',location:'Maintenance'}))].slice(0,9);
+ const alerts=[...openRequests.slice(0,4).map(x=>({id:x.id,kind:'request',title:'Site request',detail:x.request_number||'Awaiting review',status:x.status||'PENDING',location:d.locations.find(l=>l.id===x.destination_location_id)?.location_name||'Project site'})),...pendingIssues.slice(0,3).map(x=>({id:x.id,kind:'fuel',title:'Fuel issue approval',detail:Number(x.quantity_litres||0).toLocaleString('en-IN')+' litres',status:'PENDING',location:'Plant & Fuel'})),...d.maintenance.slice(0,3).map(x=>({id:x.id,kind:'maintenance',title:x.title||x.description||'Maintenance activity',detail:x.status||'Maintenance record',status:x.status||'REPORTED',location:'Maintenance'}))].slice(0,9);
  const latest=d.movements.slice(0,5);
  const recentAssets=d.items.slice(0,5);
  const number=v=>Number(v||0).toLocaleString('en-IN',{maximumFractionDigits:1});
